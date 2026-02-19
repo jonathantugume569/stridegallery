@@ -155,4 +155,4 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = 'shoesoleswebsite@gmail.com'
 
 # Optional: frontend URL for password reset links
-FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://127.0.0.1:8000")
+FRONTEND_URL = "https://stridegallery.onrender.com"
