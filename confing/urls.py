@@ -28,5 +28,5 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # ===== REACT CATCH-ALL (put last!) =====
 urlpatterns += [
-    re_path(r'^.*$', ReactAppView.as_view()),  # React handles routing
+    re_path(r'^(?!media/).*$', ReactAppView.as_view()),  # React handles routing
 ]
