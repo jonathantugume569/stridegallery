@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4j*np@q12dy%4ot(nn)z0)$258b0b@irkr_503=7i80-g&62v%'
+SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get("RENDER_EXTERNAL_HOSTNAME", "localhost")]
 
 
 # Application definition
@@ -150,9 +150,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'shoesoleswebsite@gmail.com'  # your new account
-EMAIL_HOST_PASSWORD = 'nzqxebinvffxmjvd'
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER") # your new account
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = 'shoesoleswebsite@gmail.com'
 
 # Optional: frontend URL for password reset links
-FRONTEND_URL = "http://127.0.0.1:8000"
+FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://127.0.0.1:8000")
