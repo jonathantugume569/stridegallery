@@ -5,6 +5,7 @@ from .models import Category, Product
 # Product Serializer
 # =========================
 class ProductSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(use_url=True)  # ✅ ensure URL returned
     class Meta:
         model = Product
         fields = ['id', 'name', 'image', 'price', 'category']
