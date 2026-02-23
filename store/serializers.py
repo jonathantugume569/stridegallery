@@ -6,9 +6,10 @@ from .models import Category, Product
 # =========================
 class ProductSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(use_url=True)  # ✅ ensure URL returned
+    description = serializers.CharField(required=False, allow_blank=True)  # ✅ Optional
     class Meta:
         model = Product
-        fields = ['id', 'name', 'image', 'price', 'category']
+        fields = ['id', 'name', 'image', 'price', 'category', 'description']
 
 # =========================
 # Category Serializer
